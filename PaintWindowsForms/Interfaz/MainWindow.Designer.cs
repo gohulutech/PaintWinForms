@@ -34,10 +34,10 @@ namespace Interfaz
         private void InitializeComponent()
         {
             this.AnchoLineas = new System.Windows.Forms.Panel();
-            this.btnCirculo = new FontAwesome.Sharp.IconButton();
+            this.btnLine = new FontAwesome.Sharp.IconPictureBox();
+            this.btnRectangle = new FontAwesome.Sharp.IconPictureBox();
+            this.btnCirculo = new FontAwesome.Sharp.IconPictureBox();
             this.BotonBorrar = new System.Windows.Forms.Button();
-            this.BotonRectangulo = new System.Windows.Forms.Button();
-            this.BotonLinea = new System.Windows.Forms.Button();
             this.ColorFondo = new System.Windows.Forms.PictureBox();
             this.ColorLapiz = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +61,9 @@ namespace Interfaz
             this.BotonColor9 = new System.Windows.Forms.Button();
             this.Canvas = new System.Windows.Forms.PictureBox();
             this.AnchoLineas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRectangle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCirculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorFondo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorLapiz)).BeginInit();
             this.panel1.SuspendLayout();
@@ -70,54 +73,67 @@ namespace Interfaz
             // AnchoLineas
             // 
             this.AnchoLineas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AnchoLineas.Controls.Add(this.btnLine);
+            this.AnchoLineas.Controls.Add(this.btnRectangle);
             this.AnchoLineas.Controls.Add(this.btnCirculo);
-            this.AnchoLineas.Controls.Add(this.BotonBorrar);
-            this.AnchoLineas.Controls.Add(this.BotonRectangulo);
-            this.AnchoLineas.Controls.Add(this.BotonLinea);
             this.AnchoLineas.Location = new System.Drawing.Point(12, 12);
             this.AnchoLineas.Name = "AnchoLineas";
             this.AnchoLineas.Size = new System.Drawing.Size(220, 57);
             this.AnchoLineas.TabIndex = 10;
             // 
+            // btnLine
+            // 
+            this.btnLine.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLine.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnLine.IconChar = FontAwesome.Sharp.IconChar.GripLines;
+            this.btnLine.IconColor = System.Drawing.SystemColors.ControlText;
+            this.btnLine.IconSize = 24;
+            this.btnLine.Location = new System.Drawing.Point(58, 0);
+            this.btnLine.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLine.Name = "btnLine";
+            this.btnLine.Size = new System.Drawing.Size(29, 24);
+            this.btnLine.TabIndex = 19;
+            this.btnLine.TabStop = false;
+            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
+            // 
+            // btnRectangle
+            // 
+            this.btnRectangle.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRectangle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRectangle.IconChar = FontAwesome.Sharp.IconChar.Square;
+            this.btnRectangle.IconColor = System.Drawing.SystemColors.ControlText;
+            this.btnRectangle.IconSize = 24;
+            this.btnRectangle.Location = new System.Drawing.Point(29, 0);
+            this.btnRectangle.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRectangle.Name = "btnRectangle";
+            this.btnRectangle.Size = new System.Drawing.Size(29, 24);
+            this.btnRectangle.TabIndex = 18;
+            this.btnRectangle.TabStop = false;
+            this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
+            // 
             // btnCirculo
             // 
             this.btnCirculo.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCirculo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCirculo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCirculo.IconChar = FontAwesome.Sharp.IconChar.Circle;
-            this.btnCirculo.IconColor = System.Drawing.Color.Black;
-            this.btnCirculo.IconSize = 17;
-            this.btnCirculo.Location = new System.Drawing.Point(3, 3);
+            this.btnCirculo.IconColor = System.Drawing.SystemColors.ControlText;
+            this.btnCirculo.IconSize = 24;
+            this.btnCirculo.Location = new System.Drawing.Point(0, 0);
+            this.btnCirculo.Margin = new System.Windows.Forms.Padding(0);
             this.btnCirculo.Name = "btnCirculo";
-            this.btnCirculo.Rotation = 0D;
-            this.btnCirculo.Size = new System.Drawing.Size(24, 24);
+            this.btnCirculo.Size = new System.Drawing.Size(29, 24);
             this.btnCirculo.TabIndex = 17;
-            this.btnCirculo.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnCirculo.UseVisualStyleBackColor = false;
+            this.btnCirculo.TabStop = false;
+            this.btnCirculo.Click += new System.EventHandler(this.btnCirculo_Click);
             // 
             // BotonBorrar
             // 
-            this.BotonBorrar.Location = new System.Drawing.Point(153, 13);
+            this.BotonBorrar.Location = new System.Drawing.Point(238, 17);
             this.BotonBorrar.Name = "BotonBorrar";
             this.BotonBorrar.Size = new System.Drawing.Size(60, 31);
             this.BotonBorrar.TabIndex = 8;
             this.BotonBorrar.Text = "Limpiar";
             this.BotonBorrar.UseVisualStyleBackColor = true;
-            // 
-            // BotonRectangulo
-            // 
-            this.BotonRectangulo.Location = new System.Drawing.Point(53, 6);
-            this.BotonRectangulo.Name = "BotonRectangulo";
-            this.BotonRectangulo.Size = new System.Drawing.Size(44, 44);
-            this.BotonRectangulo.TabIndex = 2;
-            this.BotonRectangulo.UseVisualStyleBackColor = true;
-            // 
-            // BotonLinea
-            // 
-            this.BotonLinea.Location = new System.Drawing.Point(103, 6);
-            this.BotonLinea.Name = "BotonLinea";
-            this.BotonLinea.Size = new System.Drawing.Size(44, 44);
-            this.BotonLinea.TabIndex = 3;
-            this.BotonLinea.UseVisualStyleBackColor = true;
             // 
             // ColorFondo
             // 
@@ -365,6 +381,7 @@ namespace Interfaz
             this.Controls.Add(this.Canvas);
             this.Controls.Add(this.ColorFondo);
             this.Controls.Add(this.ColorLapiz);
+            this.Controls.Add(this.BotonBorrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -372,6 +389,9 @@ namespace Interfaz
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.AnchoLineas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRectangle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCirculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorFondo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorLapiz)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -385,8 +405,6 @@ namespace Interfaz
 
         private System.Windows.Forms.Panel AnchoLineas;
         private System.Windows.Forms.Button BotonBorrar;
-        private System.Windows.Forms.Button BotonRectangulo;
-        private System.Windows.Forms.Button BotonLinea;
         private System.Windows.Forms.PictureBox ColorFondo;
         private System.Windows.Forms.PictureBox ColorLapiz;
         private System.Windows.Forms.Label label2;
@@ -409,6 +427,8 @@ namespace Interfaz
         private System.Windows.Forms.Button BotonColor10;
         private System.Windows.Forms.Button BotonColor9;
         private System.Windows.Forms.PictureBox Canvas;
-        private IconButton btnCirculo;
+        private IconPictureBox btnCirculo;
+        private IconPictureBox btnRectangle;
+        private IconPictureBox btnLine;
     }
 }
