@@ -5,8 +5,6 @@ namespace Interfaz
 {
     partial class MainWindow
     {
-        var bitmap = IconChar.BatteryEmpty.ToBitmap(16, Color.Black); // Windows Forms
-
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -34,10 +32,11 @@ namespace Interfaz
         private void InitializeComponent()
         {
             this.AnchoLineas = new System.Windows.Forms.Panel();
+            this.btnPencil = new FontAwesome.Sharp.IconPictureBox();
+            this.btnBorrar = new FontAwesome.Sharp.IconPictureBox();
             this.btnLine = new FontAwesome.Sharp.IconPictureBox();
             this.btnRectangle = new FontAwesome.Sharp.IconPictureBox();
             this.btnCirculo = new FontAwesome.Sharp.IconPictureBox();
-            this.BotonBorrar = new System.Windows.Forms.Button();
             this.ColorFondo = new System.Windows.Forms.PictureBox();
             this.ColorLapiz = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +60,8 @@ namespace Interfaz
             this.BotonColor9 = new System.Windows.Forms.Button();
             this.Canvas = new System.Windows.Forms.PictureBox();
             this.AnchoLineas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPencil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBorrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRectangle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCirculo)).BeginInit();
@@ -73,6 +74,8 @@ namespace Interfaz
             // AnchoLineas
             // 
             this.AnchoLineas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AnchoLineas.Controls.Add(this.btnPencil);
+            this.AnchoLineas.Controls.Add(this.btnBorrar);
             this.AnchoLineas.Controls.Add(this.btnLine);
             this.AnchoLineas.Controls.Add(this.btnRectangle);
             this.AnchoLineas.Controls.Add(this.btnCirculo);
@@ -80,6 +83,38 @@ namespace Interfaz
             this.AnchoLineas.Name = "AnchoLineas";
             this.AnchoLineas.Size = new System.Drawing.Size(220, 57);
             this.AnchoLineas.TabIndex = 10;
+            // 
+            // btnPencil
+            // 
+            this.btnPencil.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPencil.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPencil.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.btnPencil.IconColor = System.Drawing.SystemColors.ControlText;
+            this.btnPencil.IconSize = 24;
+            this.btnPencil.Location = new System.Drawing.Point(87, 0);
+            this.btnPencil.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPencil.Name = "btnPencil";
+            this.btnPencil.Size = new System.Drawing.Size(29, 24);
+            this.btnPencil.TabIndex = 21;
+            this.btnPencil.TabStop = false;
+            this.btnPencil.Click += new System.EventHandler(this.btnPencil_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBorrar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnBorrar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnBorrar.IconColor = System.Drawing.SystemColors.ControlText;
+            this.btnBorrar.IconSize = 24;
+            this.btnBorrar.Location = new System.Drawing.Point(190, -1);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(29, 24);
+            this.btnBorrar.TabIndex = 20;
+            this.btnBorrar.TabStop = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            this.btnBorrar.MouseLeave += new System.EventHandler(this.btnBorrar_MouseLeave);
+            this.btnBorrar.MouseHover += new System.EventHandler(this.btnFigure_MouseDown);
             // 
             // btnLine
             // 
@@ -95,6 +130,8 @@ namespace Interfaz
             this.btnLine.TabIndex = 19;
             this.btnLine.TabStop = false;
             this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
+            this.btnLine.MouseLeave += new System.EventHandler(this.btnBorrar_MouseLeave);
+            this.btnLine.MouseHover += new System.EventHandler(this.btnFigure_MouseDown);
             // 
             // btnRectangle
             // 
@@ -110,6 +147,8 @@ namespace Interfaz
             this.btnRectangle.TabIndex = 18;
             this.btnRectangle.TabStop = false;
             this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
+            this.btnRectangle.MouseLeave += new System.EventHandler(this.btnBorrar_MouseLeave);
+            this.btnRectangle.MouseHover += new System.EventHandler(this.btnFigure_MouseDown);
             // 
             // btnCirculo
             // 
@@ -125,15 +164,8 @@ namespace Interfaz
             this.btnCirculo.TabIndex = 17;
             this.btnCirculo.TabStop = false;
             this.btnCirculo.Click += new System.EventHandler(this.btnCirculo_Click);
-            // 
-            // BotonBorrar
-            // 
-            this.BotonBorrar.Location = new System.Drawing.Point(238, 17);
-            this.BotonBorrar.Name = "BotonBorrar";
-            this.BotonBorrar.Size = new System.Drawing.Size(60, 31);
-            this.BotonBorrar.TabIndex = 8;
-            this.BotonBorrar.Text = "Limpiar";
-            this.BotonBorrar.UseVisualStyleBackColor = true;
+            this.btnCirculo.MouseLeave += new System.EventHandler(this.btnBorrar_MouseLeave);
+            this.btnCirculo.MouseHover += new System.EventHandler(this.btnFigure_MouseDown);
             // 
             // ColorFondo
             // 
@@ -381,7 +413,6 @@ namespace Interfaz
             this.Controls.Add(this.Canvas);
             this.Controls.Add(this.ColorFondo);
             this.Controls.Add(this.ColorLapiz);
-            this.Controls.Add(this.BotonBorrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -389,6 +420,8 @@ namespace Interfaz
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.AnchoLineas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPencil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBorrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRectangle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCirculo)).EndInit();
@@ -404,7 +437,6 @@ namespace Interfaz
         #endregion
 
         private System.Windows.Forms.Panel AnchoLineas;
-        private System.Windows.Forms.Button BotonBorrar;
         private System.Windows.Forms.PictureBox ColorFondo;
         private System.Windows.Forms.PictureBox ColorLapiz;
         private System.Windows.Forms.Label label2;
@@ -430,5 +462,7 @@ namespace Interfaz
         private IconPictureBox btnCirculo;
         private IconPictureBox btnRectangle;
         private IconPictureBox btnLine;
+        private IconPictureBox btnBorrar;
+        private IconPictureBox btnPencil;
     }
 }
