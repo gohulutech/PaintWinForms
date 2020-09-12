@@ -1,7 +1,12 @@
-﻿namespace Interfaz
+﻿using FontAwesome.Sharp;
+using System.Drawing;
+
+namespace Interfaz
 {
     partial class MainWindow
     {
+        var bitmap = IconChar.BatteryEmpty.ToBitmap(16, Color.Black); // Windows Forms
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -29,7 +34,7 @@
         private void InitializeComponent()
         {
             this.AnchoLineas = new System.Windows.Forms.Panel();
-            this.BotonCirculo = new System.Windows.Forms.Button();
+            this.btnCirculo = new FontAwesome.Sharp.IconButton();
             this.BotonBorrar = new System.Windows.Forms.Button();
             this.BotonRectangulo = new System.Windows.Forms.Button();
             this.BotonLinea = new System.Windows.Forms.Button();
@@ -65,7 +70,7 @@
             // AnchoLineas
             // 
             this.AnchoLineas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AnchoLineas.Controls.Add(this.BotonCirculo);
+            this.AnchoLineas.Controls.Add(this.btnCirculo);
             this.AnchoLineas.Controls.Add(this.BotonBorrar);
             this.AnchoLineas.Controls.Add(this.BotonRectangulo);
             this.AnchoLineas.Controls.Add(this.BotonLinea);
@@ -74,14 +79,20 @@
             this.AnchoLineas.Size = new System.Drawing.Size(220, 57);
             this.AnchoLineas.TabIndex = 10;
             // 
-            // BotonCirculo
+            // btnCirculo
             // 
-            this.BotonCirculo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BotonCirculo.Location = new System.Drawing.Point(3, 6);
-            this.BotonCirculo.Name = "BotonCirculo";
-            this.BotonCirculo.Size = new System.Drawing.Size(44, 44);
-            this.BotonCirculo.TabIndex = 1;
-            this.BotonCirculo.UseVisualStyleBackColor = true;
+            this.btnCirculo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCirculo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCirculo.IconChar = FontAwesome.Sharp.IconChar.Circle;
+            this.btnCirculo.IconColor = System.Drawing.Color.Black;
+            this.btnCirculo.IconSize = 17;
+            this.btnCirculo.Location = new System.Drawing.Point(3, 3);
+            this.btnCirculo.Name = "btnCirculo";
+            this.btnCirculo.Rotation = 0D;
+            this.btnCirculo.Size = new System.Drawing.Size(24, 24);
+            this.btnCirculo.TabIndex = 17;
+            this.btnCirculo.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnCirculo.UseVisualStyleBackColor = false;
             // 
             // BotonBorrar
             // 
@@ -373,7 +384,6 @@
         #endregion
 
         private System.Windows.Forms.Panel AnchoLineas;
-        private System.Windows.Forms.Button BotonCirculo;
         private System.Windows.Forms.Button BotonBorrar;
         private System.Windows.Forms.Button BotonRectangulo;
         private System.Windows.Forms.Button BotonLinea;
@@ -399,5 +409,6 @@
         private System.Windows.Forms.Button BotonColor10;
         private System.Windows.Forms.Button BotonColor9;
         private System.Windows.Forms.PictureBox Canvas;
+        private IconButton btnCirculo;
     }
 }
