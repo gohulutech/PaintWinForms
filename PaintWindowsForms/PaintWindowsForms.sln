@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaintWindowsForms", "PaintWindowsForms\PaintWindowsForms.csproj", "{F542957B-F0A1-4929-A4BF-CE5C7E9FA2D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "PaintWindowsForms\Launcher.csproj", "{F542957B-F0A1-4929-A4BF-CE5C7E9FA2D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Modelo\Presentacion.csproj", "{DE93769B-95FC-4415-8620-EC5F330B8B85}"
 EndProject
