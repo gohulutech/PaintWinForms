@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/PaintWindowsForms/.vs/PaintWindowsForms/v16
+/PaintWindowsForms/Interfaz/obj/Debug
+/PaintWindowsForms/Logica/obj/Debug
+/PaintWindowsForms/Modelo/obj/Debug
+/PaintWindowsForms/PaintWindowsForms/obj/Debug
