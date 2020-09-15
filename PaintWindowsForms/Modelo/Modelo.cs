@@ -7,7 +7,8 @@ namespace Presentacion
     {
         private MainWindow vista;
 
-        public Modelo() {
+        public Modelo() 
+        {
             vista = MainWindow.GetVista();
             vista.Show();
             vista.OnDibujarFigura += Vista_OnDibujarFigura;
