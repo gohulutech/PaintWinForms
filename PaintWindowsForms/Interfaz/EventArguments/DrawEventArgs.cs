@@ -9,7 +9,13 @@ namespace Interfaz.EventArguments
 {
     public class DrawEventArgs : EventArgs
     {
-        public Point PuntoInicial { get; set; }
-        public Point PuntoActual { get; set; }
+        public DrawEventArgs(bool isMouseDown, Point lastPoint)
+        {
+            this.IsMouseDown = isMouseDown;
+            this.LastPoint = lastPoint;
+        }
+
+        public bool IsMouseDown { get; set; }
+        public Point LastPoint { get; set; }
     }
 }

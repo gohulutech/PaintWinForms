@@ -6,7 +6,6 @@ namespace Presentacion
     public class Modelo : ApplicationContext
     {
         private MainWindow vista;
-
         public Modelo() 
         {
             vista = MainWindow.GetVista();
@@ -17,7 +16,6 @@ namespace Presentacion
 
         private void Vista_OnDibujarFigura(object sender, Interfaz.EventArguments.DrawEventArgs e)
         {
-            throw new System.NotImplementedException();
         }
 
         private void Vista_OnSeleccionarLinea(object sender, Interfaz.EventArguments.FiguraSeleccionadaEventArgs e)

@@ -91,7 +91,7 @@ namespace Interfaz
             this.btnPencil.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.btnPencil.IconColor = System.Drawing.SystemColors.ControlText;
             this.btnPencil.IconSize = 24;
-            this.btnPencil.Location = new System.Drawing.Point(87, 0);
+            this.btnPencil.Location = new System.Drawing.Point(0, 0);
             this.btnPencil.Margin = new System.Windows.Forms.Padding(0);
             this.btnPencil.Name = "btnPencil";
             this.btnPencil.Size = new System.Drawing.Size(29, 24);
@@ -123,7 +123,7 @@ namespace Interfaz
             this.btnLine.IconChar = FontAwesome.Sharp.IconChar.GripLines;
             this.btnLine.IconColor = System.Drawing.SystemColors.ControlText;
             this.btnLine.IconSize = 24;
-            this.btnLine.Location = new System.Drawing.Point(58, 0);
+            this.btnLine.Location = new System.Drawing.Point(87, 0);
             this.btnLine.Margin = new System.Windows.Forms.Padding(0);
             this.btnLine.Name = "btnLine";
             this.btnLine.Size = new System.Drawing.Size(29, 24);
@@ -140,7 +140,7 @@ namespace Interfaz
             this.btnRectangle.IconChar = FontAwesome.Sharp.IconChar.Square;
             this.btnRectangle.IconColor = System.Drawing.SystemColors.ControlText;
             this.btnRectangle.IconSize = 24;
-            this.btnRectangle.Location = new System.Drawing.Point(29, 0);
+            this.btnRectangle.Location = new System.Drawing.Point(58, 0);
             this.btnRectangle.Margin = new System.Windows.Forms.Padding(0);
             this.btnRectangle.Name = "btnRectangle";
             this.btnRectangle.Size = new System.Drawing.Size(29, 24);
@@ -157,7 +157,7 @@ namespace Interfaz
             this.btnCirculo.IconChar = FontAwesome.Sharp.IconChar.Circle;
             this.btnCirculo.IconColor = System.Drawing.SystemColors.ControlText;
             this.btnCirculo.IconSize = 24;
-            this.btnCirculo.Location = new System.Drawing.Point(0, 0);
+            this.btnCirculo.Location = new System.Drawing.Point(29, 0);
             this.btnCirculo.Margin = new System.Windows.Forms.Padding(0);
             this.btnCirculo.Name = "btnCirculo";
             this.btnCirculo.Size = new System.Drawing.Size(29, 24);
@@ -404,6 +404,9 @@ namespace Interfaz
             this.Canvas.Size = new System.Drawing.Size(778, 363);
             this.Canvas.TabIndex = 16;
             this.Canvas.TabStop = false;
+            this.Canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDown);
+            this.Canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
+            this.Canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseUp);
             // 
             // MainWindow
             // 
