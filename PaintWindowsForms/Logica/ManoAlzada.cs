@@ -9,9 +9,9 @@ namespace Logica
 {
     public class ManoAlzada : Herramienta
     {
-        public override Bitmap DibujarFigura()
+        public override void DibujarFigura(Graphics graphics, Point lastPoint, Point currentPoint)
         {
-            throw new NotImplementedException();
+            graphics.DrawLine(new Pen(this.Color, 2), lastPoint, currentPoint);
         }
     }
 }

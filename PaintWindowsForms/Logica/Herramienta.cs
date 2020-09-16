@@ -9,6 +9,12 @@ namespace Logica
 {
     public abstract class Herramienta
     {
-        public abstract Graphics DibujarFigura();
+        public Herramienta()
+        {
+            this.Color = Color.Black;
+        }
+
+        public virtual Color Color { get; set; }
+        public abstract void DibujarFigura(Graphics graphics, Point lastPoint, Point currentPoint);
     }
 }

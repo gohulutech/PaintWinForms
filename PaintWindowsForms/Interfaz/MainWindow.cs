@@ -20,11 +20,11 @@ namespace Interfaz
 
         private string selectedButton;
 
-        public event EventHandler<FiguraSeleccionadaEventArgs> OnSeleccionarCirculo;
-        public event EventHandler<FiguraSeleccionadaEventArgs> OnSeleccionarRectangulo;
-        public event EventHandler<FiguraSeleccionadaEventArgs> OnSeleccionarLinea;
-        public event EventHandler<FiguraSeleccionadaEventArgs> OnSeleccionarManoAlzada;
-        public event EventHandler<FiguraSeleccionadaEventArgs> OnSeleccionarBorrador;
+        public event EventHandler OnSeleccionarCirculo;
+        public event EventHandler OnSeleccionarRectangulo;
+        public event EventHandler OnSeleccionarLinea;
+        public event EventHandler OnSeleccionarManoAlzada;
+        public event EventHandler OnSeleccionarBorrador;
         public event EventHandler<DrawEventArgs> OnDibujarFigura;
 
         public MainWindow()
@@ -106,21 +106,25 @@ namespace Interfaz
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isMouseDown == true && lastPoint != null)
-            {
-                if (this.Canvas.Image == null)
-                {
-                    Bitmap bmp = new Bitmap(this.Canvas.Width, this.Canvas.Height);
-                    this.Canvas.Image = bmp; 
-                }
+            if (!isMouseDown || lastPoint == null)
+                return;
 
-                using (Graphics g = Graphics.FromImage(this.Canvas.Image))
-                {
-                    g.DrawLine(new Pen(Color.Black, 2), lastPoint, e.Location);
-                }
-                this.Canvas.Invalidate();
-                lastPoint = e.Location;
+            if (this.OnDibujarFigura == null)
+                return;
+                
+            if (this.Canvas.Image == null)
+            {
+                Bitmap bmp = new Bitmap(this.Canvas.Width, this.Canvas.Height);
+                this.Canvas.Image = bmp; 
             }
+
+            using (Graphics g = Graphics.FromImage(this.Canvas.Image))
+            {
+                this.OnDibujarFigura(this, new DrawEventArgs(g, this.lastPoint, e.Location));
+            }
+            
+            this.Canvas.Invalidate();
+            lastPoint = e.Location;
         }
 
         private void Canvas_MouseUp(object sender, MouseEventArgs e)

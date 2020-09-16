@@ -1,4 +1,5 @@
 ﻿using Interfaz;
+using Logica;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -6,21 +7,24 @@ namespace Presentacion
     public class Modelo : ApplicationContext
     {
         private MainWindow vista;
+        private Herramienta herramientaActual;
+
         public Modelo() 
         {
             vista = MainWindow.GetVista();
             vista.Show();
             vista.OnDibujarFigura += Vista_OnDibujarFigura;
-            vista.OnSeleccionarLinea += Vista_OnSeleccionarLinea;
+            vista.OnSeleccionarManoAlzada += Vista_OnSeleccionarManoAlzada;
+        }
+
+        private void Vista_OnSeleccionarManoAlzada(object sender, System.EventArgs e)
+        {
+            this.herramientaActual = new ManoAlzada();
         }
 
         private void Vista_OnDibujarFigura(object sender, Interfaz.EventArguments.DrawEventArgs e)
         {
-        }
-
-        private void Vista_OnSeleccionarLinea(object sender, Interfaz.EventArguments.FiguraSeleccionadaEventArgs e)
-        {
-            throw new System.NotImplementedException();
+            this.herramientaActual.DibujarFigura(e.Graphics, e.LastPoint, e.CurrentPoint);
         }
     }
 }
