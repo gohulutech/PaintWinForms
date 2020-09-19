@@ -15,122 +15,114 @@ namespace Interfaz
 {
     public partial class MainWindow : Form
     {
-        private Point lastPoint;
-        private bool isMouseDown;
+        #region Fields
+        private ControlMainWindow controlador;
 
-        private string selectedButton;
+        #endregion
 
+        #region Public Events
         public event EventHandler OnSeleccionarCirculo;
         public event EventHandler OnSeleccionarRectangulo;
         public event EventHandler OnSeleccionarLinea;
         public event EventHandler OnSeleccionarManoAlzada;
         public event EventHandler OnSeleccionarBorrador;
+        public event EventHandler<PuntoSeleccionadoEventArgs> OnPuntoSeleccionado;
+        public event EventHandler<PuntoSeleccionadoEventArgs> OnMoverLapiz;
+        public event EventHandler<PuntoSeleccionadoEventArgs> OnSoltarMouse;
         public event EventHandler<DrawEventArgs> OnDibujarFigura;
+        public event EventHandler<ColorSeleccionadoEventArgs> OnSeleccionarColor;
+        #endregion
 
+        #region Exported Controls to Controller
+        internal PictureBox Lienzo { get { return this.Canvas; } }
+        internal IconPictureBox BtnPencil { get { return this.btnPencil; } }
+        internal IconPictureBox BtnRectangle { get { return this.btnRectangle; } }
+        internal IconPictureBox BtnCirculo { get { return this.btnCirculo; } }
+        internal IconPictureBox BtnLinea { get { return this.btnLine; } }
+        internal GroupBox Herramientas { get { return this.grupoHerramientas; } }
+        internal GroupBox Colores { get { return this.grupoColores; } }
+        internal Color ColorLinea 
+        {
+            get { return this.ColorLapiz.BackColor; }
+            set { this.ColorLapiz.BackColor = value; }
+        }
+
+        public Graphics Graphics
+        {
+            get
+            {
+                Bitmap b = new Bitmap(Canvas.Width, Canvas.Height);
+                Canvas.Image = (Image)b;
+                return Graphics.FromImage(Canvas.Image);
+            }
+        }
+        #endregion
+
+        #region Constructor
         public MainWindow()
         {
             InitializeComponent();
-            foreach (IconPictureBox button in this.AnchoLineas.Controls)
-            {
-                button.BackColor = SystemColors.Control;
-                button.Click += BtnFigure_Click;
-            }
+            
+            controlador = new ControlMainWindow(this);
         }
+        #endregion
 
-        private void BtnFigure_Click(object sender, EventArgs e)
-        {
-            LimpiarBotones();
-            SeleccionarBoton((IconPictureBox)sender);
-        }
-
+        #region Public Interface
         public static MainWindow GetVista()
         {
             return new MainWindow();
         }
+        #endregion
 
-        private void btnCirculo_Click(object sender, EventArgs e)
+        #region Internal Methods
+        internal void DibujarFigura(object sender, DrawEventArgs drawEventArgs)
         {
-           
+            OnDibujarFigura?.Invoke(sender, drawEventArgs);
         }
 
-        private void btnRectangle_Click(object sender, EventArgs e)
+        internal void SeleccionarManoAlzada(object sender, EventArgs e)
         {
+            OnSeleccionarManoAlzada?.Invoke(sender, e);
         }
 
-        private void btnLine_Click(object sender, EventArgs e)
+        internal void SeleccionarRectangulo(object sender, EventArgs e)
         {
+            OnSeleccionarRectangulo?.Invoke(sender, e);
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+        internal void SeleccionarElipse(object sender, EventArgs e)
         {
+            OnSeleccionarCirculo?.Invoke(sender, e);
         }
 
-        private void btnFigure_MouseDown(object sender, EventArgs e)
+        internal void SeleccionarLinea(object sender, EventArgs e)
         {
-            IconPictureBox button = (IconPictureBox)sender;
-            button.BackColor = Color.LightBlue;
+            OnSeleccionarLinea?.Invoke(sender, e);
         }
 
-        private void btnBorrar_MouseLeave(object sender, EventArgs e)
+        internal void SeleccionarColor(object sender, ColorSeleccionadoEventArgs e)
         {
-            IconPictureBox button = (IconPictureBox)sender;
-            if (button.Name != selectedButton)
-            {
-                button.BackColor = SystemColors.Control;
-            }
+            OnSeleccionarColor?.Invoke(sender, e);
         }
 
-        private void LimpiarBotones()
+        internal void SeleccionarPunto(object sender, PuntoSeleccionadoEventArgs e)
         {
-            foreach (IconPictureBox button in this.AnchoLineas.Controls)
-            {
-                button.BackColor = SystemColors.Control;
-            }
-        }
-        private void SeleccionarBoton(IconPictureBox button)
-        {
-            selectedButton = button.Name;
-            button.BackColor = Color.LightBlue;
+            OnPuntoSeleccionado?.Invoke(sender, e);
         }
 
-        private void btnPencil_Click(object sender, EventArgs e)
+        internal void MoverLapiz(object sender, PuntoSeleccionadoEventArgs e)
         {
-            OnSeleccionarManoAlzada?.Invoke(sender, new FiguraSeleccionadaEventArgs());
+            OnMoverLapiz?.Invoke(sender, e);
         }
 
-        private void Canvas_MouseDown(object sender, MouseEventArgs e)
+        internal void SoltarMouse(object sender, PuntoSeleccionadoEventArgs e)
         {
-            lastPoint = e.Location;
-            isMouseDown = true;
+            OnSoltarMouse?.Invoke(sender, e);
         }
+        #endregion
 
-        private void Canvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (!isMouseDown || lastPoint == null)
-                return;
-
-            if (this.OnDibujarFigura == null)
-                return;
-                
-            if (this.Canvas.Image == null)
-            {
-                Bitmap bmp = new Bitmap(this.Canvas.Width, this.Canvas.Height);
-                this.Canvas.Image = bmp; 
-            }
-
-            using (Graphics g = Graphics.FromImage(this.Canvas.Image))
-            {
-                this.OnDibujarFigura(this, new DrawEventArgs(g, this.lastPoint, e.Location));
-            }
-            
-            this.Canvas.Invalidate();
-            lastPoint = e.Location;
-        }
-
-        private void Canvas_MouseUp(object sender, MouseEventArgs e)
-        {
-            isMouseDown = false;
-            lastPoint = Point.Empty;
-        }
+        #region Private Helpers
+        
+        #endregion
     }
 }
