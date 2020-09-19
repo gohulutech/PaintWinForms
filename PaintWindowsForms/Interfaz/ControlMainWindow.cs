@@ -38,13 +38,34 @@ namespace Interfaz
             this.mainWindow.BtnRectangle.Click += BtnRectangle_Click;
             this.mainWindow.BtnCirculo.Click += BtnCirculo_Click;
             this.mainWindow.BtnLinea.Click += BtnLinea_Click;
-
+            this.mainWindow.BtnBorrar.Click += BtnBorrar_Click;
+            this.mainWindow.BtnNuevo.Click += BtnNuevo_Click;
+            this.mainWindow.BtnAbrir.Click += BtnAbrir_Click;
             this.mainWindow.Lienzo.MouseDown += Lienzo_MouseDown;
             this.mainWindow.Lienzo.MouseMove += Lienzo_MouseMove;
             this.mainWindow.Lienzo.MouseUp += Lienzo_MouseUp;
         }
 
-        
+        private void BtnAbrir_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "jpg files (*.jpg)|*.jpg|png files (*.png)|*.png";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    this.mainWindow.AbrirArchivo(sender, new FileOpenEventArgs(openFileDialog.FileName));
+                }
+            }
+        }
+
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.NuevoArchivo(sender, e);
+        }
         #endregion
 
         #region Private Helpers
@@ -66,6 +87,11 @@ namespace Interfaz
         private void BtnCirculo_Click(object sender, EventArgs e)
         {
             this.mainWindow.SeleccionarElipse(sender, e);
+        }
+
+        private void BtnBorrar_Click(object sender, EventArgs e)
+        {
+            this.mainWindow.SeleccionarBorrador(sender, e);
         }
 
         private void Lienzo_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)

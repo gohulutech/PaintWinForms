@@ -59,6 +59,12 @@ namespace Interfaz
             this.BotonColor11 = new System.Windows.Forms.Button();
             this.BotonColor10 = new System.Windows.Forms.Button();
             this.BotonColor9 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.btnPencil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBorrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLine)).BeginInit();
@@ -69,6 +75,7 @@ namespace Interfaz
             ((System.ComponentModel.ISupportInitialize)(this.Canvas)).BeginInit();
             this.grupoHerramientas.SuspendLayout();
             this.grupoColores.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPencil
@@ -184,9 +191,9 @@ namespace Interfaz
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Canvas.BackColor = System.Drawing.Color.White;
             this.Canvas.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.Canvas.Location = new System.Drawing.Point(12, 86);
+            this.Canvas.Location = new System.Drawing.Point(12, 108);
             this.Canvas.Name = "Canvas";
-            this.Canvas.Size = new System.Drawing.Size(778, 352);
+            this.Canvas.Size = new System.Drawing.Size(778, 330);
             this.Canvas.TabIndex = 16;
             this.Canvas.TabStop = false;
             // 
@@ -197,7 +204,7 @@ namespace Interfaz
             this.grupoHerramientas.Controls.Add(this.btnRectangle);
             this.grupoHerramientas.Controls.Add(this.btnBorrar);
             this.grupoHerramientas.Controls.Add(this.btnCirculo);
-            this.grupoHerramientas.Location = new System.Drawing.Point(12, 11);
+            this.grupoHerramientas.Location = new System.Drawing.Point(12, 33);
             this.grupoHerramientas.Name = "grupoHerramientas";
             this.grupoHerramientas.Size = new System.Drawing.Size(151, 69);
             this.grupoHerramientas.TabIndex = 17;
@@ -226,7 +233,7 @@ namespace Interfaz
             this.grupoColores.Controls.Add(this.BotonColor11);
             this.grupoColores.Controls.Add(this.BotonColor10);
             this.grupoColores.Controls.Add(this.BotonColor9);
-            this.grupoColores.Location = new System.Drawing.Point(492, 11);
+            this.grupoColores.Location = new System.Drawing.Point(169, 33);
             this.grupoColores.Name = "grupoColores";
             this.grupoColores.Size = new System.Drawing.Size(296, 69);
             this.grupoColores.TabIndex = 18;
@@ -409,6 +416,51 @@ namespace Interfaz
             this.BotonColor9.TabIndex = 20;
             this.BotonColor9.UseVisualStyleBackColor = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem,
+            this.abrirToolStripMenuItem,
+            this.guardarToolStripMenuItem,
+            this.cerrarToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Text = "Nuevo";
+            // 
+            // abrirToolStripMenuItem
+            // 
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirToolStripMenuItem.Text = "Abrir";
+            // 
+            // guardarToolStripMenuItem
+            // 
+            this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarToolStripMenuItem.Text = "Guardar";
+            // 
+            // cerrarToolStripMenuItem
+            // 
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,6 +469,8 @@ namespace Interfaz
             this.Controls.Add(this.grupoColores);
             this.Controls.Add(this.grupoHerramientas);
             this.Controls.Add(this.Canvas);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             ((System.ComponentModel.ISupportInitialize)(this.btnPencil)).EndInit();
@@ -430,7 +484,10 @@ namespace Interfaz
             this.grupoHerramientas.ResumeLayout(false);
             this.grupoColores.ResumeLayout(false);
             this.grupoColores.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -463,5 +520,11 @@ namespace Interfaz
         private System.Windows.Forms.Button BotonColor11;
         private System.Windows.Forms.Button BotonColor10;
         private System.Windows.Forms.Button BotonColor9;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
     }
 }

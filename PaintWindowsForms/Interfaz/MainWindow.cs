@@ -31,14 +31,20 @@ namespace Interfaz
         public event EventHandler<PuntoSeleccionadoEventArgs> OnSoltarMouse;
         public event EventHandler<DrawEventArgs> OnDibujarFigura;
         public event EventHandler<ColorSeleccionadoEventArgs> OnSeleccionarColor;
+        public event EventHandler OnNuevoArchivo;
+        public event EventHandler<FileOpenEventArgs> OnAbrirArchivo;
+        public event EventHandler OnGuardarArchivo;
         #endregion
 
         #region Exported Controls to Controller
-        internal PictureBox Lienzo { get { return this.Canvas; } }
+        public PictureBox Lienzo { get { return this.Canvas; } }
         internal IconPictureBox BtnPencil { get { return this.btnPencil; } }
         internal IconPictureBox BtnRectangle { get { return this.btnRectangle; } }
         internal IconPictureBox BtnCirculo { get { return this.btnCirculo; } }
         internal IconPictureBox BtnLinea { get { return this.btnLine; } }
+        internal IconPictureBox BtnBorrar { get { return this.btnBorrar; } }
+        internal ToolStripMenuItem BtnNuevo { get { return this.nuevoToolStripMenuItem; } }
+        internal ToolStripMenuItem BtnAbrir { get { return this.abrirToolStripMenuItem; } }
         internal GroupBox Herramientas { get { return this.grupoHerramientas; } }
         internal GroupBox Colores { get { return this.grupoColores; } }
         internal Color ColorLinea 
@@ -100,6 +106,11 @@ namespace Interfaz
             OnSeleccionarLinea?.Invoke(sender, e);
         }
 
+        internal void SeleccionarBorrador(object sender, EventArgs e)
+        {
+            OnSeleccionarBorrador?.Invoke(sender, e);
+        }
+
         internal void SeleccionarColor(object sender, ColorSeleccionadoEventArgs e)
         {
             OnSeleccionarColor?.Invoke(sender, e);
@@ -110,15 +121,13 @@ namespace Interfaz
             OnPuntoSeleccionado?.Invoke(sender, e);
         }
 
-        internal void MoverLapiz(object sender, PuntoSeleccionadoEventArgs e)
-        {
-            OnMoverLapiz?.Invoke(sender, e);
-        }
+        internal void MoverLapiz(object sender, PuntoSeleccionadoEventArgs e) => OnMoverLapiz?.Invoke(sender, e);
 
-        internal void SoltarMouse(object sender, PuntoSeleccionadoEventArgs e)
-        {
-            OnSoltarMouse?.Invoke(sender, e);
-        }
+        internal void SoltarMouse(object sender, PuntoSeleccionadoEventArgs e) => OnSoltarMouse?.Invoke(sender, e);
+
+        internal void NuevoArchivo(object sender, EventArgs e) =>  OnNuevoArchivo?.Invoke(sender, e);
+
+        internal void AbrirArchivo(object sender, FileOpenEventArgs e) => OnAbrirArchivo?.Invoke(sender, e);
         #endregion
 
         #region Private Helpers

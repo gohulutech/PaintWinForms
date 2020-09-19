@@ -49,6 +49,7 @@
     <Compile Include="ControlMainWindow.cs" />
     <Compile Include="EventArguments\ColorSeleccionadoEventArgs.cs" />
     <Compile Include="EventArguments\DrawEventArgs.cs" />
+    <Compile Include="EventArguments\FileOpenEventArgs.cs" />
     <Compile Include="EventArguments\PuntoSeleccionadoEventArgs.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>

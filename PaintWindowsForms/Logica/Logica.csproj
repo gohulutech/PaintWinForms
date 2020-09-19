@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Figura.cs" />
+    <Compile Include="Herramientas\Borrador.cs" />
     <Compile Include="Herramientas\Elipse.cs" />
     <Compile Include="Herramientas\Herramienta.cs" />
     <Compile Include="Herramientas\Linea.cs" />
