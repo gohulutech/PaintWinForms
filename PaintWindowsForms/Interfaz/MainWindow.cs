@@ -81,45 +81,21 @@ namespace Interfaz
         #endregion
 
         #region Internal Methods
-        internal void DibujarFigura(object sender, DrawEventArgs drawEventArgs)
-        {
-            OnDibujarFigura?.Invoke(sender, drawEventArgs);
-        }
+        internal void DibujarFigura(object sender, DrawEventArgs drawEventArgs) => OnDibujarFigura?.Invoke(sender, drawEventArgs);
 
-        internal void SeleccionarManoAlzada(object sender, EventArgs e)
-        {
-            OnSeleccionarManoAlzada?.Invoke(sender, e);
-        }
+        internal void SeleccionarManoAlzada(object sender, EventArgs e) => OnSeleccionarManoAlzada?.Invoke(sender, e);
 
-        internal void SeleccionarRectangulo(object sender, EventArgs e)
-        {
-            OnSeleccionarRectangulo?.Invoke(sender, e);
-        }
+        internal void SeleccionarRectangulo(object sender, EventArgs e) => OnSeleccionarRectangulo?.Invoke(sender, e);
 
-        internal void SeleccionarElipse(object sender, EventArgs e)
-        {
-            OnSeleccionarCirculo?.Invoke(sender, e);
-        }
+        internal void SeleccionarElipse(object sender, EventArgs e) => OnSeleccionarCirculo?.Invoke(sender, e);
 
-        internal void SeleccionarLinea(object sender, EventArgs e)
-        {
-            OnSeleccionarLinea?.Invoke(sender, e);
-        }
+        internal void SeleccionarLinea(object sender, EventArgs e) => OnSeleccionarLinea?.Invoke(sender, e);
 
-        internal void SeleccionarBorrador(object sender, EventArgs e)
-        {
-            OnSeleccionarBorrador?.Invoke(sender, e);
-        }
+        internal void SeleccionarBorrador(object sender, EventArgs e) =>  OnSeleccionarBorrador?.Invoke(sender, e);
 
-        internal void SeleccionarColor(object sender, ColorSeleccionadoEventArgs e)
-        {
-            OnSeleccionarColor?.Invoke(sender, e);
-        }
+        internal void SeleccionarColor(object sender, ColorSeleccionadoEventArgs e) => OnSeleccionarColor?.Invoke(sender, e);
 
-        internal void SeleccionarPunto(object sender, PuntoSeleccionadoEventArgs e)
-        {
-            OnPuntoSeleccionado?.Invoke(sender, e);
-        }
+        internal void SeleccionarPunto(object sender, PuntoSeleccionadoEventArgs e) => OnPuntoSeleccionado?.Invoke(sender, e);
 
         internal void MoverLapiz(object sender, PuntoSeleccionadoEventArgs e) => OnMoverLapiz?.Invoke(sender, e);
 

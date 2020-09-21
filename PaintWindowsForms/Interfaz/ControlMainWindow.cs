@@ -62,52 +62,34 @@ namespace Interfaz
             }
         }
 
-        private void BtnNuevo_Click(object sender, EventArgs e)
-        {
+        private void BtnNuevo_Click(object sender, EventArgs e) =>
             this.mainWindow.NuevoArchivo(sender, e);
-        }
         #endregion
 
         #region Private Helpers
-        private void BtnPencil_Click(object sender, EventArgs e)
-        {
+        private void BtnPencil_Click(object sender, EventArgs e) =>
             this.mainWindow.SeleccionarManoAlzada(sender, e);
-        }
 
-        private void BtnRectangle_Click(object sender, EventArgs e)
-        {
+        private void BtnRectangle_Click(object sender, EventArgs e) =>
             this.mainWindow.SeleccionarRectangulo(sender, e);
-        }
 
-        private void BtnLinea_Click(object sender, EventArgs e)
-        {
+        private void BtnLinea_Click(object sender, EventArgs e) =>
             this.mainWindow.SeleccionarLinea(sender, e);
-        }
 
-        private void BtnCirculo_Click(object sender, EventArgs e)
-        {
+        private void BtnCirculo_Click(object sender, EventArgs e) =>
             this.mainWindow.SeleccionarElipse(sender, e);
-        }
 
-        private void BtnBorrar_Click(object sender, EventArgs e)
-        {
+        private void BtnBorrar_Click(object sender, EventArgs e) =>
             this.mainWindow.SeleccionarBorrador(sender, e);
-        }
 
-        private void Lienzo_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
+        private void Lienzo_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e) =>
             this.mainWindow.MoverLapiz(sender, new PuntoSeleccionadoEventArgs(e.Location));
-        }
 
-        private void Lienzo_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
+        private void Lienzo_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) =>
             this.mainWindow.SeleccionarPunto(sender, new PuntoSeleccionadoEventArgs(e.Location));
-        }
 
-        private void Lienzo_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
+        private void Lienzo_MouseUp(object sender, System.Windows.Forms.MouseEventArgs e) =>
             this.mainWindow.SoltarMouse(sender, new PuntoSeleccionadoEventArgs(e.Location));
-        }
 
         private void BtnFigure_Click(object sender, EventArgs e)
         {
