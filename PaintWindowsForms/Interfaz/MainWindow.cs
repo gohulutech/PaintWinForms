@@ -72,6 +72,16 @@ namespace Interfaz
             return new MainWindow();
         }
 
+        public Graphics Graphics
+        {
+            get
+            {
+                this.Image = this.Image ?? new Bitmap(this.Canvas.Width, this.Canvas.Height);
+                Canvas.Image = (Image)this.Image.Clone();
+                return Graphics.FromImage(Canvas.Image);
+            }
+        }
+
         public void CargarImagen(string filename)
         {
             var bitmap = new Bitmap(filename);
@@ -84,16 +94,6 @@ namespace Interfaz
             this.Image = new Bitmap(Canvas.Width, Canvas.Height);
             this.Canvas.Image = null;
             this.GuardarImagen();
-        }
-
-        public Graphics Graphics
-        {
-            get
-            {
-                this.Image = this.Image ?? new Bitmap(this.Canvas.Width, this.Canvas.Height);
-                Canvas.Image = (Image)this.Image.Clone();
-                return Graphics.FromImage(Canvas.Image);
-            }
         }
 
         public void GuardarImagen()

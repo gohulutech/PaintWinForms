@@ -36,10 +36,8 @@ namespace Interfaz
             this.btnLine = new FontAwesome.Sharp.IconPictureBox();
             this.btnRectangle = new FontAwesome.Sharp.IconPictureBox();
             this.btnCirculo = new FontAwesome.Sharp.IconPictureBox();
-            this.ColorFondo = new System.Windows.Forms.PictureBox();
             this.ColorLapiz = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Canvas = new System.Windows.Forms.PictureBox();
             this.grupoHerramientas = new System.Windows.Forms.GroupBox();
             this.grupoColores = new System.Windows.Forms.GroupBox();
@@ -70,7 +68,6 @@ namespace Interfaz
             ((System.ComponentModel.ISupportInitialize)(this.btnLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRectangle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCirculo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorFondo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorLapiz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Canvas)).BeginInit();
             this.grupoHerramientas.SuspendLayout();
@@ -148,15 +145,6 @@ namespace Interfaz
             this.btnCirculo.TabIndex = 17;
             this.btnCirculo.TabStop = false;
             // 
-            // ColorFondo
-            // 
-            this.ColorFondo.BackColor = System.Drawing.Color.White;
-            this.ColorFondo.Location = new System.Drawing.Point(45, 36);
-            this.ColorFondo.Name = "ColorFondo";
-            this.ColorFondo.Size = new System.Drawing.Size(28, 26);
-            this.ColorFondo.TabIndex = 14;
-            this.ColorFondo.TabStop = false;
-            // 
             // ColorLapiz
             // 
             this.ColorLapiz.BackColor = System.Drawing.Color.Black;
@@ -174,15 +162,6 @@ namespace Interfaz
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Linea";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Fondo";
             // 
             // Canvas
             // 
@@ -218,10 +197,8 @@ namespace Interfaz
             this.grupoColores.Controls.Add(this.BotonColor7);
             this.grupoColores.Controls.Add(this.ColorLapiz);
             this.grupoColores.Controls.Add(this.label2);
-            this.grupoColores.Controls.Add(this.ColorFondo);
             this.grupoColores.Controls.Add(this.BotonColor16);
             this.grupoColores.Controls.Add(this.BotonColor6);
-            this.grupoColores.Controls.Add(this.label1);
             this.grupoColores.Controls.Add(this.BotonColor15);
             this.grupoColores.Controls.Add(this.BotonColor5);
             this.grupoColores.Controls.Add(this.BotonColor14);
@@ -235,7 +212,7 @@ namespace Interfaz
             this.grupoColores.Controls.Add(this.BotonColor9);
             this.grupoColores.Location = new System.Drawing.Point(169, 33);
             this.grupoColores.Name = "grupoColores";
-            this.grupoColores.Size = new System.Drawing.Size(296, 69);
+            this.grupoColores.Size = new System.Drawing.Size(256, 69);
             this.grupoColores.TabIndex = 18;
             this.grupoColores.TabStop = false;
             this.grupoColores.Text = "Colores";
@@ -245,7 +222,7 @@ namespace Interfaz
             this.BotonColor1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor1.BackColor = System.Drawing.Color.White;
             this.BotonColor1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor1.Location = new System.Drawing.Point(87, 16);
+            this.BotonColor1.Location = new System.Drawing.Point(47, 16);
             this.BotonColor1.Name = "BotonColor1";
             this.BotonColor1.Size = new System.Drawing.Size(20, 20);
             this.BotonColor1.TabIndex = 5;
@@ -256,7 +233,7 @@ namespace Interfaz
             this.BotonColor8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor8.BackColor = System.Drawing.Color.Magenta;
             this.BotonColor8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor8.Location = new System.Drawing.Point(269, 16);
+            this.BotonColor8.Location = new System.Drawing.Point(229, 16);
             this.BotonColor8.Name = "BotonColor8";
             this.BotonColor8.Size = new System.Drawing.Size(20, 20);
             this.BotonColor8.TabIndex = 6;
@@ -267,7 +244,7 @@ namespace Interfaz
             this.BotonColor7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor7.BackColor = System.Drawing.Color.Blue;
             this.BotonColor7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor7.Location = new System.Drawing.Point(243, 16);
+            this.BotonColor7.Location = new System.Drawing.Point(203, 16);
             this.BotonColor7.Name = "BotonColor7";
             this.BotonColor7.Size = new System.Drawing.Size(20, 20);
             this.BotonColor7.TabIndex = 7;
@@ -278,7 +255,7 @@ namespace Interfaz
             this.BotonColor16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor16.BackColor = System.Drawing.Color.Purple;
             this.BotonColor16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor16.Location = new System.Drawing.Point(269, 42);
+            this.BotonColor16.Location = new System.Drawing.Point(229, 42);
             this.BotonColor16.Name = "BotonColor16";
             this.BotonColor16.Size = new System.Drawing.Size(20, 20);
             this.BotonColor16.TabIndex = 8;
@@ -289,7 +266,7 @@ namespace Interfaz
             this.BotonColor6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor6.BackColor = System.Drawing.Color.Cyan;
             this.BotonColor6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor6.Location = new System.Drawing.Point(217, 16);
+            this.BotonColor6.Location = new System.Drawing.Point(177, 16);
             this.BotonColor6.Name = "BotonColor6";
             this.BotonColor6.Size = new System.Drawing.Size(20, 20);
             this.BotonColor6.TabIndex = 9;
@@ -300,7 +277,7 @@ namespace Interfaz
             this.BotonColor15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor15.BackColor = System.Drawing.Color.Navy;
             this.BotonColor15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor15.Location = new System.Drawing.Point(243, 42);
+            this.BotonColor15.Location = new System.Drawing.Point(203, 42);
             this.BotonColor15.Name = "BotonColor15";
             this.BotonColor15.Size = new System.Drawing.Size(20, 20);
             this.BotonColor15.TabIndex = 10;
@@ -311,7 +288,7 @@ namespace Interfaz
             this.BotonColor5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor5.BackColor = System.Drawing.Color.Lime;
             this.BotonColor5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor5.Location = new System.Drawing.Point(191, 16);
+            this.BotonColor5.Location = new System.Drawing.Point(151, 16);
             this.BotonColor5.Name = "BotonColor5";
             this.BotonColor5.Size = new System.Drawing.Size(20, 20);
             this.BotonColor5.TabIndex = 11;
@@ -322,7 +299,7 @@ namespace Interfaz
             this.BotonColor14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor14.BackColor = System.Drawing.Color.Teal;
             this.BotonColor14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor14.Location = new System.Drawing.Point(217, 42);
+            this.BotonColor14.Location = new System.Drawing.Point(177, 42);
             this.BotonColor14.Name = "BotonColor14";
             this.BotonColor14.Size = new System.Drawing.Size(20, 20);
             this.BotonColor14.TabIndex = 12;
@@ -333,7 +310,7 @@ namespace Interfaz
             this.BotonColor4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor4.BackColor = System.Drawing.Color.Yellow;
             this.BotonColor4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor4.Location = new System.Drawing.Point(165, 16);
+            this.BotonColor4.Location = new System.Drawing.Point(125, 16);
             this.BotonColor4.Name = "BotonColor4";
             this.BotonColor4.Size = new System.Drawing.Size(20, 20);
             this.BotonColor4.TabIndex = 13;
@@ -344,7 +321,7 @@ namespace Interfaz
             this.BotonColor13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor13.BackColor = System.Drawing.Color.Green;
             this.BotonColor13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor13.Location = new System.Drawing.Point(191, 42);
+            this.BotonColor13.Location = new System.Drawing.Point(151, 42);
             this.BotonColor13.Name = "BotonColor13";
             this.BotonColor13.Size = new System.Drawing.Size(20, 20);
             this.BotonColor13.TabIndex = 14;
@@ -355,7 +332,7 @@ namespace Interfaz
             this.BotonColor3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.BotonColor3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor3.Location = new System.Drawing.Point(139, 16);
+            this.BotonColor3.Location = new System.Drawing.Point(99, 16);
             this.BotonColor3.Name = "BotonColor3";
             this.BotonColor3.Size = new System.Drawing.Size(20, 20);
             this.BotonColor3.TabIndex = 15;
@@ -366,7 +343,7 @@ namespace Interfaz
             this.BotonColor12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor12.BackColor = System.Drawing.Color.Olive;
             this.BotonColor12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor12.Location = new System.Drawing.Point(165, 42);
+            this.BotonColor12.Location = new System.Drawing.Point(125, 42);
             this.BotonColor12.Name = "BotonColor12";
             this.BotonColor12.Size = new System.Drawing.Size(20, 20);
             this.BotonColor12.TabIndex = 16;
@@ -377,7 +354,7 @@ namespace Interfaz
             this.BotonColor2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor2.BackColor = System.Drawing.Color.Red;
             this.BotonColor2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor2.Location = new System.Drawing.Point(113, 16);
+            this.BotonColor2.Location = new System.Drawing.Point(73, 16);
             this.BotonColor2.Name = "BotonColor2";
             this.BotonColor2.Size = new System.Drawing.Size(20, 20);
             this.BotonColor2.TabIndex = 17;
@@ -388,7 +365,7 @@ namespace Interfaz
             this.BotonColor11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BotonColor11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor11.Location = new System.Drawing.Point(139, 42);
+            this.BotonColor11.Location = new System.Drawing.Point(99, 42);
             this.BotonColor11.Name = "BotonColor11";
             this.BotonColor11.Size = new System.Drawing.Size(20, 20);
             this.BotonColor11.TabIndex = 18;
@@ -399,7 +376,7 @@ namespace Interfaz
             this.BotonColor10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor10.BackColor = System.Drawing.Color.Maroon;
             this.BotonColor10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor10.Location = new System.Drawing.Point(113, 42);
+            this.BotonColor10.Location = new System.Drawing.Point(73, 42);
             this.BotonColor10.Name = "BotonColor10";
             this.BotonColor10.Size = new System.Drawing.Size(20, 20);
             this.BotonColor10.TabIndex = 19;
@@ -410,7 +387,7 @@ namespace Interfaz
             this.BotonColor9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BotonColor9.BackColor = System.Drawing.Color.Black;
             this.BotonColor9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BotonColor9.Location = new System.Drawing.Point(87, 42);
+            this.BotonColor9.Location = new System.Drawing.Point(47, 42);
             this.BotonColor9.Name = "BotonColor9";
             this.BotonColor9.Size = new System.Drawing.Size(20, 20);
             this.BotonColor9.TabIndex = 20;
@@ -440,25 +417,25 @@ namespace Interfaz
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
             // abrirToolStripMenuItem
             // 
             this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.abrirToolStripMenuItem.Text = "Abrir";
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.guardarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.guardarToolStripMenuItem.Text = "Guardar";
             // 
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             // 
             // MainWindow
@@ -478,7 +455,6 @@ namespace Interfaz
             ((System.ComponentModel.ISupportInitialize)(this.btnLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRectangle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCirculo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ColorFondo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ColorLapiz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Canvas)).EndInit();
             this.grupoHerramientas.ResumeLayout(false);
@@ -492,10 +468,8 @@ namespace Interfaz
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox ColorFondo;
         private System.Windows.Forms.PictureBox ColorLapiz;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox Canvas;
         private IconPictureBox btnCirculo;
         private IconPictureBox btnRectangle;

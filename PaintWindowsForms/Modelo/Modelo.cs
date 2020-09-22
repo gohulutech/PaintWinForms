@@ -12,6 +12,7 @@ namespace Presentacion
         private MainWindow vista;
         private Figura figuraActual;
         private Color ColorPrincipal;
+        private int AnchoLinea;
         private bool LapizAbajo;
         private Herramienta HerramientaActual;
 
@@ -93,7 +94,7 @@ namespace Presentacion
                 this.figuraActual.AjustarFin(e.Point.X, e.Point.Y);
                 Pintar();
                 this.vista.GuardarImagen();
-                this.figuraActual = new Figura(this.HerramientaActual, this.ColorPrincipal, 2);
+                this.figuraActual = new Figura(this.HerramientaActual, this.ColorPrincipal, this.AnchoLinea);
                 this.figuraActual.AjustarInicio(e.Point.X, e.Point.Y);
             }
             else if (figuraActual != null && (this.HerramientaActual is Borrador))
@@ -101,7 +102,7 @@ namespace Presentacion
                 this.figuraActual.AjustarFin(e.Point.X, e.Point.Y);
                 Pintar();
                 this.vista.GuardarImagen();
-                this.figuraActual = new Figura(this.HerramientaActual, Color.White, 2);
+                this.figuraActual = new Figura(this.HerramientaActual, Color.White, this.AnchoLinea);
                 this.figuraActual.AjustarInicio(e.Point.X, e.Point.Y);
             }
         }
@@ -125,13 +126,13 @@ namespace Presentacion
         {
             if (!LapizAbajo && this.HerramientaActual != null)
             {
-                figuraActual = new Figura(HerramientaActual, this.ColorPrincipal, 2);
+                figuraActual = new Figura(HerramientaActual, this.ColorPrincipal, this.AnchoLinea);
                 LapizAbajo = true;
                 this.figuraActual.AjustarInicio(e.Point.X, e.Point.Y);
             } 
             else if (!LapizAbajo && this.HerramientaActual is Borrador)
             {
-                figuraActual = new Figura(HerramientaActual, Color.White, 2);
+                figuraActual = new Figura(HerramientaActual, Color.White, this.AnchoLinea);
                 LapizAbajo = true;
                 this.figuraActual.AjustarInicio(e.Point.X, e.Point.Y);
             }
