@@ -44,6 +44,15 @@ namespace Interfaz
             this.mainWindow.Lienzo.MouseDown += Lienzo_MouseDown;
             this.mainWindow.Lienzo.MouseMove += Lienzo_MouseMove;
             this.mainWindow.Lienzo.MouseUp += Lienzo_MouseUp;
+            this.mainWindow.Lienzo.SizeChanged += Lienzo_SizeChanged;
+        }
+
+        private void Lienzo_SizeChanged(object sender, EventArgs e)
+        {
+            var image = this.mainWindow.Lienzo.Image;
+            this.mainWindow.Image = new Bitmap(this.mainWindow.Lienzo.Width, this.mainWindow.Lienzo.Height);
+            this.mainWindow.Lienzo.Image = image;
+            this.mainWindow.GuardarImagen();
         }
 
         private void BtnAbrir_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace Interfaz
     {
         #region Fields
         private ControlMainWindow controlador;
-
+        
         #endregion
 
         #region Public Events
@@ -37,7 +38,7 @@ namespace Interfaz
         #endregion
 
         #region Exported Controls to Controller
-        public PictureBox Lienzo { get { return this.Canvas; } }
+        internal PictureBox Lienzo { get { return this.Canvas; } }
         internal IconPictureBox BtnPencil { get { return this.btnPencil; } }
         internal IconPictureBox BtnRectangle { get { return this.btnRectangle; } }
         internal IconPictureBox BtnCirculo { get { return this.btnCirculo; } }
@@ -52,24 +53,16 @@ namespace Interfaz
             get { return this.ColorLapiz.BackColor; }
             set { this.ColorLapiz.BackColor = value; }
         }
+        internal Image Image { get; set; }
 
-        public Graphics Graphics
-        {
-            get
-            {
-                Bitmap b = new Bitmap(Canvas.Width, Canvas.Height);
-                Canvas.Image = (Image)b;
-                return Graphics.FromImage(Canvas.Image);
-            }
-        }
         #endregion
 
         #region Constructor
         public MainWindow()
         {
             InitializeComponent();
-            
             controlador = new ControlMainWindow(this);
+            LimpiarCanvas();
         }
         #endregion
 
@@ -77,6 +70,35 @@ namespace Interfaz
         public static MainWindow GetVista()
         {
             return new MainWindow();
+        }
+
+        public void CargarImagen(string filename)
+        {
+            var bitmap = new Bitmap(filename);
+            this.Canvas.Image = bitmap;
+            this.GuardarImagen();
+        }
+
+        public void LimpiarCanvas()
+        {
+            this.Image = new Bitmap(Canvas.Width, Canvas.Height);
+            this.Canvas.Image = null;
+            this.GuardarImagen();
+        }
+
+        public Graphics Graphics
+        {
+            get
+            {
+                this.Image = this.Image ?? new Bitmap(this.Canvas.Width, this.Canvas.Height);
+                Canvas.Image = (Image)this.Image.Clone();
+                return Graphics.FromImage(Canvas.Image);
+            }
+        }
+
+        public void GuardarImagen()
+        {
+            this.Image = this.Canvas.Image;
         }
         #endregion
 
