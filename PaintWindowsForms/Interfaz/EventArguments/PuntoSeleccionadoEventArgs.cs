@@ -14,13 +14,6 @@ namespace Interfaz.EventArguments
             this.Point = point;
         }
 
-        public PuntoSeleccionadoEventArgs(Graphics graphics, Point point)
-        {
-            this.Point = point;
-            this.Graphics = graphics;
-        }
-
         public Point Point { get; private set; }
-        public Graphics Graphics { get; private set; }
     }
 }

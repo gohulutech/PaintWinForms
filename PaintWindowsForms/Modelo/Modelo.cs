@@ -112,21 +112,19 @@ namespace Presentacion
 
         private void Vista_OnSoltarMouse(object sender, Interfaz.EventArguments.PuntoSeleccionadoEventArgs e)
         {
-            if (LapizAbajo && !(this.HerramientaActual is ManoAlzada && this.HerramientaActual is Borrador) && this.HerramientaActual != null)
+            if (LapizAbajo && !(this.HerramientaActual is ManoAlzada || this.HerramientaActual is Borrador) && this.HerramientaActual != null)
             {
-                LapizAbajo = false;
                 this.figuras.Add(figuraActual);
                 this.figuraActual = null;
-                Pintar();
             }
             else if (LapizAbajo && (this.HerramientaActual is ManoAlzada || this.HerramientaActual is Borrador) && this.HerramientaActual != null)
             {
-                LapizAbajo = false;
                 this.figuraActual.AjustarFin(e.Point.X, e.Point.Y);
                 this.figuras.Add(figuraActual);
                 this.figuraActual = null;
-                Pintar();
             }
+            LapizAbajo = false;
+            Pintar();
         }
 
         private void Vista_OnPuntoSeleccionado(object sender, Interfaz.EventArguments.PuntoSeleccionadoEventArgs e)

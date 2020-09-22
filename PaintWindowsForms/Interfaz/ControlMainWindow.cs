@@ -97,21 +97,6 @@ namespace Interfaz
             SeleccionarBoton((IconPictureBox)sender);
         }
 
-        private void btnFigure_MouseDown(object sender, EventArgs e)
-        {
-            IconPictureBox button = (IconPictureBox)sender;
-            button.BackColor = Color.LightBlue;
-        }
-
-        private void btnBorrar_MouseLeave(object sender, EventArgs e)
-        {
-            IconPictureBox button = (IconPictureBox)sender;
-            if (button.Name != selectedButton)
-            {
-                button.BackColor = SystemColors.Control;
-            }
-        }
-
         private void LimpiarBotones()
         {
             foreach (IconPictureBox button in this.mainWindow.Herramientas.Controls)
