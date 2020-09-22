@@ -2,6 +2,8 @@
 using Interfaz.EventArguments;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -33,6 +35,10 @@ namespace Interfaz
                     buttonColor.MouseClick += ButtonColor_Click;
                 }
             }
+            foreach (Control botonTamano in this.mainWindow.Tamanos.Controls)
+            {
+                botonTamano.Click += BotonTamano_Click;
+            }
 
             this.mainWindow.BtnPencil.Click += BtnPencil_Click;
             this.mainWindow.BtnRectangle.Click += BtnRectangle_Click;
@@ -47,11 +53,35 @@ namespace Interfaz
             this.mainWindow.Lienzo.SizeChanged += Lienzo_SizeChanged;
         }
 
+        private void BotonTamano_Click(object sender, EventArgs e)
+        {
+            Button boton = (Button)sender;
+            if (boton.Name == "btnTamañoG")
+            {
+                this.mainWindow.SeleccionarAnchoLinea(this, new AnchoLineaSeleccionadoEventArgs(10));
+            }
+            else if (boton.Name == "btnTamañoM")
+            {
+                this.mainWindow.SeleccionarAnchoLinea(this, new AnchoLineaSeleccionadoEventArgs(5));
+            }
+            else if (boton.Name == "btnTamañoP")
+            {
+                this.mainWindow.SeleccionarAnchoLinea(this, new AnchoLineaSeleccionadoEventArgs(2));
+            }
+        }
+
         private void Lienzo_SizeChanged(object sender, EventArgs e)
         {
             var image = this.mainWindow.Lienzo.Image;
-            this.mainWindow.Image = new Bitmap(this.mainWindow.Lienzo.Width, this.mainWindow.Lienzo.Height);
-            this.mainWindow.Lienzo.Image = image;
+            var destImage = new Bitmap(this.mainWindow.Lienzo.Width, this.mainWindow.Lienzo.Height);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.DrawImageUnscaled(image, 0, 0);
+            }
+
+            this.mainWindow.Image = destImage;
+            this.mainWindow.Lienzo.Image = destImage;
             this.mainWindow.GuardarImagen();
         }
 

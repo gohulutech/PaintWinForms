@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlMainWindow.cs" />
+    <Compile Include="EventArguments\AnchoLineaSeleccionadoEventArgs.cs" />
     <Compile Include="EventArguments\ColorSeleccionadoEventArgs.cs" />
     <Compile Include="EventArguments\DrawEventArgs.cs" />
     <Compile Include="EventArguments\FileOpenEventArgs.cs" />

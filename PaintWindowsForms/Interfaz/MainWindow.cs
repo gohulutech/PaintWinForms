@@ -34,6 +34,7 @@ namespace Interfaz
         public event EventHandler<ColorSeleccionadoEventArgs> OnSeleccionarColor;
         public event EventHandler OnNuevoArchivo;
         public event EventHandler<FileOpenEventArgs> OnAbrirArchivo;
+        public event EventHandler<AnchoLineaSeleccionadoEventArgs> OnAnchoLineaSeleccionado;
         public event EventHandler OnGuardarArchivo;
         #endregion
 
@@ -48,6 +49,7 @@ namespace Interfaz
         internal ToolStripMenuItem BtnAbrir { get { return this.abrirToolStripMenuItem; } }
         internal GroupBox Herramientas { get { return this.grupoHerramientas; } }
         internal GroupBox Colores { get { return this.grupoColores; } }
+        internal GroupBox Tamanos { get { return this.grupoTamanos; } }
         internal Color ColorLinea 
         {
             get { return this.ColorLapiz.BackColor; }
@@ -126,6 +128,7 @@ namespace Interfaz
         internal void NuevoArchivo(object sender, EventArgs e) =>  OnNuevoArchivo?.Invoke(sender, e);
 
         internal void AbrirArchivo(object sender, FileOpenEventArgs e) => OnAbrirArchivo?.Invoke(sender, e);
+        internal void SeleccionarAnchoLinea(object sender, AnchoLineaSeleccionadoEventArgs e) => OnAnchoLineaSeleccionado?.Invoke(sender,e);
         #endregion
 
         #region Private Helpers

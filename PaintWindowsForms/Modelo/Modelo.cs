@@ -19,6 +19,7 @@ namespace Presentacion
         public Modelo() 
         {
             this.ColorPrincipal = Color.Black;
+            this.AnchoLinea = 2;
 
             vista = MainWindow.GetVista();
             vista.Show();
@@ -34,6 +35,12 @@ namespace Presentacion
             vista.OnSoltarMouse += Vista_OnSoltarMouse;
             vista.OnNuevoArchivo += Vista_OnNuevoArchivo;
             vista.OnAbrirArchivo += Vista_OnAbrirArchivo;
+            vista.OnAnchoLineaSeleccionado += Vista_OnAnchoLineaSeleccionado;
+        }
+
+        private void Vista_OnAnchoLineaSeleccionado(object sender, Interfaz.EventArguments.AnchoLineaSeleccionadoEventArgs e)
+        {
+            this.AnchoLinea = e.AnchoLinea;
         }
 
         private void Vista_OnAbrirArchivo(object sender, Interfaz.EventArguments.FileOpenEventArgs e)

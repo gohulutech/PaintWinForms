@@ -40,7 +40,7 @@ namespace Logica
 
         public void Dibujar(Graphics g)
         {
-            this.Herramienta.DibujarFigura(g, this.Color, 2, this.PuntoInicial, this.PuntoActual);
+            this.Herramienta.DibujarFigura(g, this.Color, this.AnchoLinea, this.PuntoInicial, this.PuntoActual);
         }
     }
 }

@@ -63,6 +63,10 @@ namespace Interfaz
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grupoTamanos = new System.Windows.Forms.GroupBox();
+            this.btnTamañoG = new System.Windows.Forms.Button();
+            this.btnTamañoM = new System.Windows.Forms.Button();
+            this.btnTamañoP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnPencil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBorrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLine)).BeginInit();
@@ -73,6 +77,7 @@ namespace Interfaz
             this.grupoHerramientas.SuspendLayout();
             this.grupoColores.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.grupoTamanos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPencil
@@ -438,11 +443,51 @@ namespace Interfaz
             this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.cerrarToolStripMenuItem.Text = "Cerrar";
             // 
+            // grupoTamanos
+            // 
+            this.grupoTamanos.Controls.Add(this.btnTamañoP);
+            this.grupoTamanos.Controls.Add(this.btnTamañoM);
+            this.grupoTamanos.Controls.Add(this.btnTamañoG);
+            this.grupoTamanos.Location = new System.Drawing.Point(431, 33);
+            this.grupoTamanos.Name = "grupoTamanos";
+            this.grupoTamanos.Size = new System.Drawing.Size(119, 69);
+            this.grupoTamanos.TabIndex = 20;
+            this.grupoTamanos.TabStop = false;
+            this.grupoTamanos.Text = "Tamaños";
+            // 
+            // btnTamañoG
+            // 
+            this.btnTamañoG.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTamañoG.Location = new System.Drawing.Point(6, 15);
+            this.btnTamañoG.Name = "btnTamañoG";
+            this.btnTamañoG.Size = new System.Drawing.Size(105, 20);
+            this.btnTamañoG.TabIndex = 0;
+            this.btnTamañoG.UseVisualStyleBackColor = false;
+            // 
+            // btnTamañoM
+            // 
+            this.btnTamañoM.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTamañoM.Location = new System.Drawing.Point(6, 36);
+            this.btnTamañoM.Name = "btnTamañoM";
+            this.btnTamañoM.Size = new System.Drawing.Size(105, 15);
+            this.btnTamañoM.TabIndex = 1;
+            this.btnTamañoM.UseVisualStyleBackColor = false;
+            // 
+            // btnTamañoP
+            // 
+            this.btnTamañoP.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTamañoP.Location = new System.Drawing.Point(6, 54);
+            this.btnTamañoP.Name = "btnTamañoP";
+            this.btnTamañoP.Size = new System.Drawing.Size(105, 10);
+            this.btnTamañoP.TabIndex = 2;
+            this.btnTamañoP.UseVisualStyleBackColor = false;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grupoTamanos);
             this.Controls.Add(this.grupoColores);
             this.Controls.Add(this.grupoHerramientas);
             this.Controls.Add(this.Canvas);
@@ -462,6 +507,7 @@ namespace Interfaz
             this.grupoColores.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.grupoTamanos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,5 +546,9 @@ namespace Interfaz
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
+        private System.Windows.Forms.GroupBox grupoTamanos;
+        private System.Windows.Forms.Button btnTamañoP;
+        private System.Windows.Forms.Button btnTamañoM;
+        private System.Windows.Forms.Button btnTamañoG;
     }
 }
