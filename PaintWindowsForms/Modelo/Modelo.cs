@@ -10,17 +10,22 @@ namespace Presentacion
     public class Modelo : ApplicationContext
     {
         private MainWindow vista;
+        private Herramienta HerramientaActual;
         private Figura figuraActual;
+        
         private Color ColorPrincipal;
         private int AnchoLinea;
+
         private bool LapizAbajo;
-        private Herramienta HerramientaActual;
 
-        public Modelo() 
+        public Modelo()
         {
-            this.ColorPrincipal = Color.Black;
-            this.AnchoLinea = 2;
+            DefinirPropiedadesIniciales();
+            CargarVista();
+        }
 
+        private void CargarVista()
+        {
             vista = MainWindow.GetVista();
             vista.Show();
             vista.OnSeleccionarManoAlzada += Vista_OnSeleccionarManoAlzada;
@@ -36,6 +41,12 @@ namespace Presentacion
             vista.OnNuevoArchivo += Vista_OnNuevoArchivo;
             vista.OnAbrirArchivo += Vista_OnAbrirArchivo;
             vista.OnAnchoLineaSeleccionado += Vista_OnAnchoLineaSeleccionado;
+        }
+
+        private void DefinirPropiedadesIniciales()
+        {
+            this.ColorPrincipal = Color.Black;
+            this.AnchoLinea = 2;
         }
 
         private void Vista_OnAnchoLineaSeleccionado(object sender, Interfaz.EventArguments.AnchoLineaSeleccionadoEventArgs e)
@@ -154,8 +165,6 @@ namespace Presentacion
         {
             Graphics canvas = vista.Graphics;
             figuraActual?.Dibujar(canvas);
-            //foreach (Figura f in figuras)
-            //    f.Dibujar(canvas);
         }
     }
 }

@@ -2,9 +2,6 @@
 using Interfaz.EventArguments;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Interfaz
@@ -75,9 +72,12 @@ namespace Interfaz
             var image = this.mainWindow.Lienzo.Image;
             var destImage = new Bitmap(this.mainWindow.Lienzo.Width, this.mainWindow.Lienzo.Height);
 
-            using (var graphics = Graphics.FromImage(destImage))
+            if (image != null)
             {
-                graphics.DrawImageUnscaled(image, 0, 0);
+                using (var graphics = Graphics.FromImage(destImage))
+                {
+                    graphics.DrawImageUnscaled(image, 0, 0);
+                }
             }
 
             this.mainWindow.Image = destImage;

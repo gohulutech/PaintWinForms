@@ -1,15 +1,7 @@
 ﻿using FontAwesome.Sharp;
 using Interfaz.EventArguments;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Interfaz
@@ -96,6 +88,7 @@ namespace Interfaz
             this.Image = new Bitmap(Canvas.Width, Canvas.Height);
             this.Canvas.Image = null;
             this.GuardarImagen();
+            this.Canvas.Height--;
         }
 
         public void GuardarImagen()
